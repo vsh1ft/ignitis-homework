@@ -1,0 +1,54 @@
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-jooq'
+
+    implementation 'org.jooq:jooq-meta:3.18.6'
+    implementation 'com.h2database:h2'
+
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+    implementation 'org.liquibase:liquibase-core'
+
+    jooqGenerator 'com.h2database:h2'
+
+    testImplementation "org.spockframework:spock-core:2.4-M1-groovy-3.0"
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+jooq {
+    version = '3.18.6'
+    configurations {
+        first {
+            generationTool {
+                jdbc {
+                    driver = 'org.h2.Driver'
+                    url = 'jdbc:h2:~/test-gradle'
+                    user = 'sa'
+                    password = ''
+                    schema = 'PUBLIC'
+                }
+                generator {
+                    generate {
+                        javaTimeTypes = true
+                    }
+                    name = 'org.jooq.codegen.DefaultGenerator'
+                    database {
+                        name = 'org.jooq.meta.h2.H2Database'
+                        includes = '.*'
+                        excludes = ''
+                    }
+                    target {
+                        packageName = 'com.vsh1ft.ignitis.model'
+                        directory = 'target/generated-src/jooq/main'
+                    }
+                }
+            }
+        }
+    }
+}
+

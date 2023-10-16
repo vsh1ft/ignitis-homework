@@ -1,0 +1,31 @@
+apply plugin: "jacoco"
+jacoco {
+    toolVersion = "0.8.9"
+}
+
+def fileFilter = ['**/IgnitisApplication.*', '**/type/*', '**/model/*']
+def debugTree = fileTree(dir: "${buildDir}/classes/java/main", excludes: fileFilter)
+
+jacocoTestReport {
+
+    afterEvaluate {
+        classDirectories.from = debugTree
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.43
+            }
+        }
+
+        afterEvaluate {
+            classDirectories.from = debugTree
+        }
+    }
+}
+
+test { finalizedBy jacocoTestReport }
+check.dependsOn(jacocoTestCoverageVerification)
