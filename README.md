@@ -6,6 +6,7 @@ Implementation description for the Ignitis homework task.
 * JRE 17 required.
 * Project can be run by calling `gradle run` command.
 * Functionality can be invoked via REST-API. Documentation for it is provided with springdoc OpenApi3 and can be accessed by visiting a link `http://localhost:8080/swagger-ui/index.html` when the project is running.
+![openAPI](https://github.com/vsh1ft/ignitis-homework/assets/3269569/540092d4-2c5d-482d-a91d-6a5ad147e7b1)
 
 
 # Implementation details
