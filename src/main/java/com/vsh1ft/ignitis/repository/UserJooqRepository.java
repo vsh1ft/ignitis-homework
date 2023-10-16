@@ -85,5 +85,6 @@ public class UserJooqRepository implements UserRepository {
                 )
                 .fetchOneInto(String.class);
     }
+
 }
 

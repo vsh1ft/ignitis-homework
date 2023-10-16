@@ -122,4 +122,5 @@ class UserControllerTest extends Specification {
     private Person createUser() {
         return new Person("id", false, false, "name")
     }
+
 }

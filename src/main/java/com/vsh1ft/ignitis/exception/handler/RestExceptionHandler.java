@@ -16,5 +16,4 @@ public final class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiError(ex.getMessage()));
     }
 
-
 }

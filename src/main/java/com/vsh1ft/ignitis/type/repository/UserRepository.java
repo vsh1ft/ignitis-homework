@@ -23,4 +23,5 @@ public interface UserRepository {
     Double findAverageMessageLength(String userId);
 
     String findLastMessageTextByUserId(String userId);
+
 }

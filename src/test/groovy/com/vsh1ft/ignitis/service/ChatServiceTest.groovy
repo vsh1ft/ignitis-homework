@@ -54,4 +54,5 @@ class ChatServiceTest extends Specification {
         return new Message("id", "msg", LocalDateTime.now(),
                 new Person("s", true, false, "name"))
     }
+
 }

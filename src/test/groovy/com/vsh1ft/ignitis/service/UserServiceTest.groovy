@@ -132,4 +132,5 @@ class UserServiceTest extends Specification {
     private Person createPerson() {
         return new Person("s", true, false, "name")
     }
+
 }

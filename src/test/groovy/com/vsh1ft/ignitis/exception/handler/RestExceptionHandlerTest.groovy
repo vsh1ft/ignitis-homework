@@ -16,4 +16,5 @@ class RestExceptionHandlerTest extends Specification {
         expectedErrorMessage == responseEntity.body.message()
         HttpStatus.CONFLICT == responseEntity.statusCode
     }
+
 }

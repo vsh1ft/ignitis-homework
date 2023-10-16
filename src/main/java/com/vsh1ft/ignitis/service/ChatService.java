@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Collection;
 
 @Service
-@Transactional
 public class ChatService {
 
     private final ChatRepository repository;
