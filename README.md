@@ -11,24 +11,23 @@ Implementation description for the Ignitis homework task.
 
 # Implementation details
 
-#####Basic requirements
-- [x ] Use git version control system.
-  ######Although the project is on git, there is only one big commit for the project, because I was relying on Intellij local history. Ideally there should be many small commits for every feature implemented/logical change.
+##### Basic requirements
+- [x] Use git version control system.
+  ###### Although the project is on git, there is only one big commit for the project, because I was relying on Intellij local history. Ideally there should be many small commits for every feature implemented/logical change.
 - [x] Use Java 11+
 - [x] Use Gradle (https://gradle.org/)
 - [x] Use Spring boot
 - [x] Use springdoc OpenApi3
 - [x] Use h2 database (https://www.h2database.com)
 - [x] Write plain SQL with ORM.
-  ######Since the project uses Jooq ORM and it generates entities based on database schema, I have decided to use them instead of plain SQL, because then the code becomes type safe. Also, the dsl queries very closely mimic actual SQL queries.
+ ###### Since the project uses Jooq ORM and it generates entities based on database schema, I have decided to use them instead of plain SQL, because then the code becomes type safe. Also, the dsl queries very closely mimic actual SQL queries.
 - [x] Write automated tests
-
-#####Advanced requirements
+##### Advanced requirements
 - [x] Use Liquibase (https://www.liquibase.org/)
-  ######I have only integrated Liquibase with Spring Boot project after finishing the coding task.
+  ###### I have only integrated Liquibase with Spring Boot project after finishing the coding task.
 - [x] Use JOOQ (https://www.jooq.org/)
-- [ ] Authenticate users using JWT.
-  ######The main functionality missing from the project. Right now every user can create a new user. With JWT authentication Spring could manage access to methods via `PreAuthorize("hasRole('ROLE_ADMIN')") ` annotation.
+- [ ] Authenticate users using JWT.    
+###### The main functionality missing from the project. Right now every user can create a new user. With JWT authentication Spring could manage access to methods via `PreAuthorize("hasRole('ROLE_ADMIN')") ` annotation.
 - [x] Create automated tests using Spock.
 
 
